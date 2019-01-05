@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body style="margin:50px">
+	<h1>Angular JS 14 - Limit to 5 items with | limitTo:5</h1>
+	<div ng-controller="y as x"> 
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="myObject in x.myObjects | limitTo:5">
+				<h3>{{myObject.a}}
+					  <em class="pull-right">{{myObject.b | currency}}</em>
+				</h3>
+			</li>
+		</ul>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_14.js"></script>
+</body>
+</html

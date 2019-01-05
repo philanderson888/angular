@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body>
+	<h1>Angular JS 09 - ng-show</h1>
+	<div ng-controller="y as x">       <!-- function y in app x -->
+		<p>{{x.myObject.a}}</p>
+		<button ng-show="x.myObject.b">Show this button</button>
+		<button ng-show="x.myObject.c">But not this one</button>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_09.js"></script>
+</body>
+</html>

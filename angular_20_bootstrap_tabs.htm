@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body style="margin:50px">
+	<h1>Angular JS 20 - Adding Detail To Each Tab Entry</h1>
+	<div ng-controller="y as x"> 
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="myObject in x.myObjects | orderBy:'-b' | limitTo:5">
+				<h3>{{myObject.a}}
+						<img ng-src="{{myObject.image}}" />
+					  <em class="pull-right">{{myObject.b | currency}}</em>
+				</h3>
+				<ul class="nav nav-pills">
+					<li><a href ng-click="tab = 1">Test</a></li>
+					<li><a href ng-click="tab = 2">Test2</a></li>
+				</ul>
+				{{tab}}
+				<div class="panel" ng-show="tab===1">Content for tab 1</div>
+				<div class="panel" ng-show="tab===2">Content for tab 2</div>
+			</li>
+		</ul>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_16.js"></script>
+</body>
+</html>

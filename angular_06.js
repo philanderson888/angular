@@ -1,0 +1,1 @@
+var angular_06 = angular.module('abc', []);

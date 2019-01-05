@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body style="margin:50px">
+	<h1>Angular JS 23 - new ng-controller</h1>
+	<div ng-controller="y as x"> 
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="myObject in x.myObjects | orderBy:'-b' | limitTo:5">
+				<h3>{{myObject.a}}
+						<img ng-src="{{myObject.image}}" />
+					  <em class="pull-right">{{myObject.b | currency}}</em>
+				</h3>
+				<div ng-init="tab=1" ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{active:tab===1}"><a href ng-click="tab = 1">Description</a></li>
+						<li ng-class="{active:tab===2}"><a href ng-click="tab = 2">More Detail</a></li>
+					</ul>
+					<div class="panel" ng-show="tab===1">{{myObject.description}}</div>
+					<div class="panel" ng-show="tab===2">{{myObject.moredetail}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_23.js"></script>
+</body>
+</html>

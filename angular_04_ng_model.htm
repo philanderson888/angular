@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+<style>
+p{
+font-size:50px;
+}
+input[type="text"]{
+font-size:40px;
+width:600px;
+background-color:yellow;
+}
+</style>
+</head>
+<body>
+<form>
+<input type="text" ng-model="a" ng-init="a='This is some text input by user'" />
+</form>
+<p>Text input by user is : {{a}}</p>
+<script src="assets/js/angular.js">
+</script>
+<html>

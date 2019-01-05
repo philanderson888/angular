@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="">
+<head>
+    <title>Angular JS</title>
+</head>
+<body>
+    <!--Directives in this example:
+        ng-init, ng-bind, ng-app, ng-model etc.
+    -->
+<h1>Angular JS</h2>
+<h2>Understanding Directives ng-init, ng-bind, ng-app, ng-model</h2>
+
+    <h4>Example: using expression  which means two braces with an expression inside</h4>
+    <div>
+        <span>The sum of numbers (5+8+2) is : {{5 + 8 + 2}}.</span><br/>
+        <!--abnormal expression but valid-->
+        <span>The sum of numbers (5+8+ -2) is : {{5 + 8+ -2}}.</span>
+    </div>
+
+    <h4>Example: using ng-init="total=10" to give a variable a value</h4>
+	<h4>Using ng-bind directives</h4>
+
+    <!--variable 'total' is assigned a value '10' using ng-init directive-->
+    <div ng-init="total = 10">
+        <p>
+            <!--used expression and ng-bind in same statement-->
+            {{total + 1}} is more than <span ng-bind="total - 1"></span>
+        </p>
+    </div>
+
+    <!--multiple variables (semi-colon; separated) can also be assigned -->
+    <div ng-init="numberOfDays = 7; units = 'days'; collection = 'week'">
+    <p>
+        There are {{numberOfDays}} {{units}} in a <span ng-bind="collection"></span>.
+    </p>
+    </div>
+
+    <h4>Example: using NG-MODEL TO INPUT A VARIABLE</h4>
+    <!--Accepting input value in text box control and print with a message-->
+    <div>
+        Enter your name : <input type="text" ng-model="yourName"/>
+        <p>Hi {{yourName}}! Thanks for reading this article.</p>
+    </div>
+<script src="assets/js/angular.js"></script>
+</body>
+</html>

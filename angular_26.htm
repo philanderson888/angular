@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body style="margin:50px">
+	<h1>Angular JS 26 - moving code into ng-controller</h1>
+	<div ng-controller="y as x"> 
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="myObject in x.myObjects | orderBy:'-b' | limitTo:5">
+				<h3>{{myObject.a}}
+						<img ng-src="{{myObject.image}}" />
+					  <em class="pull-right">{{myObject.b | currency}}</em>
+				</h3>
+				<div ng-controller="PanelController as panel">
+					<ul class="nav nav-pills">
+						<li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Description</a></li>
+						<li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">More Detail</a></li>
+					</ul>
+					<div class="panel" ng-show="panel.isSelected(1)">{{myObject.description}}</div>
+					<div class="panel" ng-show="panel.isSelected(2)">{{myObject.moredetail}}</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_24.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html ng-app="x">
+<head><link rel="stylesheet" href="assets/css/bootstrap.css" /></head>
+<body style="margin-left:50px">
+	<h1>Angular JS 11 - read from array with ng-repeat</h1>
+	<div ng-controller="y as x">       <!-- function y in app x -->
+		<div ng-repeat="myObjectItem in x.myObject">
+			<p>{{myObjectItem.a}}</p>
+	</div>
+<script src="assets/js/angular.js"></script>
+<script src="angular_11.js"></script>
+</body>
+</html
